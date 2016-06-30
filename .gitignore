@@ -1,0 +1,70 @@
+# ============================================= #
+# Node JS Components						    #
+# ============================================= #
+SkyNet/node_modules
+SkyNet/bower_components
+
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+xcodebuild/
+xcodebuild*/
+*.apk
+
+# =========== #
+# SVN Entries #
+# =========== #
+.svn
+.svn*
+.svn/*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+thirdparty/AndroidNative/bin
+thirdparty/AndroidNative/gen
+thirdparty/Bluetooth/Android/bin
+thirdparty/Bluetooth/Android/gen
+bin/
+ServerLogs/
+
+# ============ #
+# Local Assets #
+# ============ #
+unity/main/Assets/Resources/Characters
+
+# ============================================= #
+# Asset Bundle - Should always be commented out #
+# ============================================= #
+#unity/main/Assets/GameData/Bundles/Characters
+
+mod_pbxproj.pyc.meta
+mod_pbxproj.pyc
+AdjustPostBuildAndroidLog.txt
+AdjustPostBuildiOSLog.txt
