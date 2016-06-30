@@ -18,7 +18,8 @@
             v2f vert (float4 vertex : POSITION, float3 normal : NORMAL)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(vertex);
+//                o.pos = UnityObjectToClipPos(vertex);
+				o.pos = mul(UNITY_MATRIX_MVP, float4(vertex.x, vertex.y, vertex.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
                 o.worldNormal = UnityObjectToWorldNormal(normal);
                 return o;
             }

@@ -35,8 +35,10 @@ Shader "Unlit/SkyReflection Per Pixel"
             v2f vert (float4 vertex : POSITION, float3 normal : NORMAL, float4 tangent : TANGENT, float2 uv : TEXCOORD0)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(vertex);
-                o.worldPos = mul(unity_ObjectToWorld, vertex).xyz;
+//                o.pos = UnityObjectToClipPos(vertex);
+				o.pos = mul(UNITY_MATRIX_MVP, float4(vertex.x, vertex.y, vertex.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
+//                o.worldPos = mul(unity_ObjectToWorld, vertex).xyz;
+				o.worldPos = mul(_Object2World, vertex).xyz;	// http://forum.unity3d.com/threads/_object2world-undeclared.385227/
                 half3 wNormal = UnityObjectToWorldNormal(normal);
                 half3 wTangent = UnityObjectToWorldDir(tangent.xyz);
                 // compute bitangent from cross product of normal and tangent

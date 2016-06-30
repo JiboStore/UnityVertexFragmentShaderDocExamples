@@ -29,7 +29,8 @@
             v2f vert (float4 pos : POSITION, float3 normal : NORMAL, float2 uv : TEXCOORD0)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(pos);
+//                o.pos = UnityObjectToClipPos(pos);
+                o.pos = mul(UNITY_MATRIX_MVP, float4(pos.x, pos.y, pos.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
                 o.coords = pos.xyz * _Tiling;
                 o.objNormal = normal;
                 o.uv = uv;

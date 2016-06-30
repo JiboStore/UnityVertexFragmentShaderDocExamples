@@ -25,7 +25,8 @@
             v2f vert (float4 pos : POSITION, float2 uv : TEXCOORD0)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(pos);
+//                o.vertex = UnityObjectToClipPos(pos);
+                o.vertex = mul(UNITY_MATRIX_MVP, float4(pos.x, pos.y, pos.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
                 o.uv = uv * _Density;
                 return o;
             }

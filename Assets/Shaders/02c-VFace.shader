@@ -20,7 +20,8 @@
 
             float4 vert (float4 vertex : POSITION) : SV_POSITION
             {
-                return UnityObjectToClipPos(vertex);
+//                return UnityObjectToClipPos(vertex);
+				return mul(UNITY_MATRIX_MVP, float4(vertex.x, vertex.y, vertex.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
             }
 
             fixed4 _ColorFront;

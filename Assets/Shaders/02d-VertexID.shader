@@ -21,7 +21,8 @@
                 )
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos(vertex);
+//                o.pos = UnityObjectToClipPos(vertex);
+				o.pos = mul(UNITY_MATRIX_MVP, float4(vertex.x, vertex.y, vertex.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
                 // output funky colors based on vertex ID
                 float f = (float)vid;
                 o.color = half4(sin(f/10),sin(f/100),sin(f/1000),0) * 0.5 + 0.5;

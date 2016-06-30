@@ -26,7 +26,8 @@
             {
                 v2f o;
                 o.uv = uv;
-                outpos = UnityObjectToClipPos(vertex);
+//                outpos = UnityObjectToClipPos(vertex);
+				outpos = mul(UNITY_MATRIX_MVP, float4(vertex.x, vertex.y, vertex.z, 1.0));	// http://forum.unity3d.com/threads/unityobjecttoclippos.400520/
                 return o;
             }
 
