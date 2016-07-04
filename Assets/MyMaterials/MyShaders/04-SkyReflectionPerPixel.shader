@@ -39,9 +39,11 @@ Shader "MyShader/04-SkyReflectionPerPixel"
 			{
 				v2f o;
 				o.pos = mul(UNITY_MATRIX_MVP, v);
-				o.worldPos = mul(_Object2World, v).xyz;
+				o.worldPos = mul(_Object2World, v).xyz;	// ori
+//				o.worldPos = mul(UNITY_MATRIX_MVP, v).xyz;	// mine
 				half3 wNormal = UnityObjectToWorldNormal(n);
-				half3 wTangent = UnityObjectToWorldDir(t.xyz);
+				half3 wTangent = UnityObjectToWorldDir(t.xyz);	// ori
+//				half3 wTangent = UnityObjectToWorldNormal(t.xyz);	// mine
 				// compute bitangent from cross product of normal and tangent
 				half tangentSign = t.w * unity_WorldTransformParams.w;
 				half3 wBitangent = cross(wNormal, wTangent) * tangentSign;
