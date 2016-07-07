@@ -68,5 +68,10 @@
 			ENDCG
 		}
 
+		// whatever the pass above
+		// add in this UsePass
+		// will automatically generate shadows :)
+		// pull in shadow caster from VertexLit built-in shader
+		UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 	}
 }
